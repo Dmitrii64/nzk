@@ -1,0 +1,10 @@
+@mixin font-size($s1, $s2) {
+  font-size: $s1;
+  line-height: calc($s2/$s1);
+}
+
+@mixin font-namu($s1, $s2) {
+  font-family: "NAMU", "Helvetica", sans-serif;
+  color: #000;
+  @include font-size($s1, $s2);
+}

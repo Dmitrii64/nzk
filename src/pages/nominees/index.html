@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="/static/fonts/fonts.css" />
+  <link href="/common.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <title>Номинанты</title>
+</head>
+
+<body>
+  @@include('header/index.html')
+  <main>
+    @@include('innerPoster/index.html', {
+    "title": "Номинанты",
+    "description": "В списке представлены компании, заявленные 1 раз и более. Точное количество голосов скрыто для сохранения объективности.",
+    "imgURL": "/static/images/nominations.png",
+    "class": "inner-poster__img-wrapper_small"
+    })
+    <section class="nominees container">
+      <div class="nominees__chapter">
+        <p class="nominees__title">Общие номинации:</p>
+        <ul class="nominees__list">
+          @@include('nominee/index.html', {
+          "class": "nominees__item nominee_open",
+          "title": "Автодилер года",
+          "imgURL": "/static/images/nominations/car-dealer.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Автосалон года",
+          "imgURL": "/static/images/nominations/car-showroom.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Автосервис года",
+          "imgURL": "/static/images/nominations/car-service.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Застройщик года",
+          "imgURL": "/static/images/nominations/developer.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Медцентр года",
+          "imgURL": "/static/images/nominations/medical-center.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Образовательный центр года",
+          "imgURL": "/static/images/nominations/educational-center.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Производитель продуктов питания года",
+          "imgURL": "/static/images/nominations/food-manufacture.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Производитель промышленных товаров года",
+          "imgURL": "/static/images/nominations/industrial-manufacture.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Ресторан и кафе года",
+          "imgURL": "/static/images/nominations/cafe.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Фастфуд и доставка года",
+          "imgURL": "/static/images/nominations/fastfood.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Сервис и услуги года",
+          "imgURL": "/static/images/nominations/service.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Спортивный клуб года",
+          "imgURL": "/static/images/nominations/sport.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Стройка и ремонт года",
+          "imgURL": "/static/images/nominations/repair.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Торговая сеть года",
+          "imgURL": "/static/images/nominations/commercial.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "ТРЦ года",
+          "imgURL": "/static/images/nominations/mall.png",
+          })
+        </ul>
+      </div>
+      <div class="nominees__chapter">
+        <p class="nominees__title">Специальные номинации</p>
+        <ul class="nominees__list">
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Рекламодатель года",
+          "imgURL": "/static/images/nominations/advertiser.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Бизнес-персона года",
+          "imgURL": "/static/images/nominations/persone.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Ньюсмейкер года",
+          "imgURL": "/static/images/nominations/newsmaker.png",
+          })
+          @@include('nominee/index.html', {
+          "class": "nominees__item",
+          "title": "Народная любовь года",
+          "imgURL": "/static/images/nominations/love.png",
+          })
+        </ul>
+      </div>
+    </section>
+  </main>
+  @@include('footer/index.html')
+</body>
+
+</html>

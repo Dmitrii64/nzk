@@ -1,0 +1,111 @@
+@import "../../components/mixins";
+
+.memories {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0;
+    max-width: 730px;
+    @include font-namu(103px, 101px);
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &>span {
+      color: #F90;
+    }
+  }
+
+  &__description {
+    max-width: 800px;
+    margin-top: -24px;
+    align-self: flex-end;
+    @include font-size(20px, 34px);
+  }
+
+  &__stat {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      width: 30.9%;
+    }
+
+    &-number {
+      @include font-namu(58px, 60px);
+      text-transform: uppercase;
+    }
+
+    &-text {
+      margin-top: 35px;
+      @include font-size(16px, 24px);
+    }
+  }
+
+  &__img {
+    display: block;
+    margin-top: 85px;
+    width: 100%;
+    height: auto;
+    max-height: 650px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.winners {
+  margin-top: 110px;
+  margin-bottom: 110px;
+
+  &__title {
+    max-width: 580px;
+    @include font-namu(58px, 73px);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+
+    &-open {
+      width: 64.8%;
+    }
+
+    &-special {
+      width: 31.5%;
+    }
+
+    &-title {
+      margin-bottom: 8px;
+      @include font-size(18px, 28px);
+      font-weight: 600;
+    }
+
+    &-item {
+      @include font-size(16px, 28px);
+
+      &>span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.more {
+  margin-bottom: 110px;
+
+  &__list {
+    display: flex;
+    margin: 0 -16px;
+  }
+
+  &__item {
+    margin: 0 16px;
+    width: calc(100%/3 - 32px);
+  }
+}

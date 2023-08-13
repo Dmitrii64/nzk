@@ -1,0 +1,44 @@
+@import "../../components/mixins";
+
+.rules {
+  margin-top: 50px;
+  margin-bottom: 250px;
+
+  &__title {
+    margin: 0;
+    @include font-namu(28px, 24px);
+    font-weight: 400;
+  }
+
+  &__chapter {
+    max-width: 760px;
+    padding-top: 50px;
+
+    &-title {
+      @include font-namu(20px, 24px);
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    @include font-size(18px, 24px);
+    color: #141516;
+
+    &:first-of-type {
+      margin-top: 18px;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-top: 45px;
+    @include font-size(18px, 24px);
+    color: #141516;
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="/static/fonts/fonts.css" />
+  <link href="/common.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <title>Правила</title>
+</head>
+
+<body>
+  @@include('header/index.html')
+  <main>
+    <section class="rules container">
+      <h1 class="rules__title">Правила</h1>
+      <div class="rules__chapter">
+        <h2 class="rules__chapter-title">Премия будет проходить в несколько этапов:</h2>
+        <p class="rules__text">С 12 сентября по 10 октября года – номинирование компаний. </p>
+        <p class="rules__text">С 11 октября по 17 октября – формирование шорт-листов по каждой номинации из самых
+          упоминаемых участников.С 18
+          октября по 12 ноября на сайте – голосование по номинациям.</p>
+        <p class="rules__text">С 13 по 27 ноября подведение итогов голосования, определение победителей специальных
+          номинаций.</p>
+        <p class="rules__text">28 ноября – награждение победителей.</p>
+
+      </div>
+      <div class="rules__chapter">
+        <h2 class="rules__chapter-title">Ключевые моменты:</h2>
+        <ol>
+          <li class="rules__text">Заявлять компании и голосовать может любой пользователь.</li>
+          <li class="rules__text">В каждой номинации можно предложить только одну компанию.</li>
+          <li class="rules__text">Выбор победителей в специальных номинациях за собой оставляет редакция ИА "Амител" и Business FM</li>
+          <li class="rules__text">Звание “Народная любовь года” достается компании, набравшей большее количество голосов среди всех
+            номинаций.</li>
+          <li class="rules__text">Компания-победитель вправе использовать логотип проекта в своих маркетинговых, рекламных и других целях,
+            связанных с продвижением продукта/услуги на потребительском рынке, при условии полного соответствия всех
+            технических характеристик логотипа (ТМ, цвет, шрифт и др.).</li>
+        </ol>
+      </div>
+      <a href="#" class="rules__link">Общее положение</a>
+    </section>
+  </main>
+  @@include('footer/index.html')
+</body>
+
+</html>

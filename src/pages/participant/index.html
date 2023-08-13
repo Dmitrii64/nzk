@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="/static/fonts/fonts.css" />
+  <link href="/common.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <title>Участникам</title>
+</head>
+
+<body>
+  @@include('header/index.html')
+  <main>
+    @@include('innerPoster/index.html', {
+    "title": "Участникам",
+    "description": "Эта страница для вас, если ваша компания хочет стать номинантом премии Народный знак качества и попасть в шорт-лист.",
+    "imgURL": "/static/images/star.png"
+    })
+    <section class="faq">
+      <ul class="faq__list">
+        <li class="faq__item">
+          <p class="faq__question">Как стать номинантом?</p>
+          <p class="faq__answer">Номинировать вашу компанию может может любой пользователь. Больше заявок – выше шансы
+            попасть в топ-10.</p>
+        </li>
+        <li class="faq__item">
+          <p class="faq__question">Как замотивировать аудиторию номинировать/ голосовать?</p>
+          <p class="faq__answer">Для начала просто расскажите своим клиентам, что хотите принять участие в премии, и
+            почему это важно для вас. Объясните последовательность действий: что нужно сделать, чтобы голос за вас был
+            засчитан. Задействуйте для этого различные каналы коммуникации: точки продаж, социальные сети,
+            e-mail-рассылки и так далее.</p>
+        </li>
+        <li class="faq__item">
+          <p class="faq__question">Чего не следует делать?</p>
+          <p class="faq__answer">Принижать конкурентов и порочить их в глазах аудитории. Распространять недостоверную
+            или некорректную информацию. Ваши клиенты наверняка знакомы с вами ни один день, поэтому нет смысла вводить
+            их в заблуждение.
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
+  @@include('footer/index.html')
+</body>
+
+</html>

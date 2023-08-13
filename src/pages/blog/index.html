@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="/static/fonts/fonts.css" />
+  <link href="/common.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <title>Новости</title>
+</head>
+
+<body>
+  @@include('header/index.html')
+  <main>
+    <section class="blog container">
+      <h1 class="blog__title">Новости проекта</h1>
+      <ul class="blog__list">
+        @@include('blogCard/index.html', {
+        "class": "blog__item",
+        "imgURL" : "/static/images/blog-3.png",
+        "title": "Премия читателей Аmic: В прямом смысле – народные!",
+        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+        "linkText": "Читать на amic.ru",
+        "link":
+        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+        })
+        @@include('blogCard/index.html', {
+        "class": "blog__item",
+        "imgURL" : "/static/images/blog-1.png",
+        "title": "Премия читателей Аmic: В прямом смысле – народные!",
+        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+        "linkText": "Читать на amic.ru",
+        "link":
+        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+        })
+        @@include('blogCard/index.html', {
+        "class": "blog__item",
+        "imgURL" : "/static/images/blog-2.png",
+        "title": "Премия читателей Аmic: В прямом смысле – народные!",
+        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+        "linkText": "Читать на amic.ru",
+        "link":
+        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+        })
+        @@include('blogCard/index.html', {
+        "class": "blog__item",
+        "imgURL" : "/static/images/blog-3.png",
+        "title": "Премия читателей Аmic: В прямом смысле – народные!",
+        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+        "linkText": "Читать на amic.ru",
+        "link":
+        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+        })
+        @@include('blogCard/index.html', {
+        "class": "blog__item",
+        "imgURL" : "/static/images/blog-1.png",
+        "title": "Премия читателей Аmic: В прямом смысле – народные!",
+        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+        "linkText": "Читать на amic.ru",
+        "link":
+        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+        })
+        @@include('blogCard/index.html', {
+        "class": "blog__item",
+        "imgURL" : "/static/images/blog-2.png",
+        "title": "Премия читателей Аmic: В прямом смысле – народные!",
+        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+        "linkText": "Читать на amic.ru",
+        "link":
+        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+        })
+      </ul>
+      <button class="blog__more" type="button">Показать еще</button>
+    </section>
+  </main>
+  @@include('footer/index.html')
+</body>
+
+</html>

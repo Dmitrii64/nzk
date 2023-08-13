@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="/static/fonts/fonts.css" />
+  <link href="/common.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <title>НЗК22</title>
+</head>
+
+<body>
+  @@include('header/index.html')
+  <main>
+    <section class="memories container">
+      <h1 class="memories__title"><span>Как это было</span> в 2022 году</h1>
+      <p class="memories__description">В 2022 году проект "Народный знак качества" прошёл с размахом и в конкурентной
+        битве. На протяжении двух месяцев жители края выбирали лучших из лучших</p>
+      <ul class="memories__stat">
+        <li class="memories__stat-item">
+          <span class="memories__stat-number">639</span>
+          <p class="memories__stat-text">компаний в 20 номинациях были заявлены для участия в премии.
+            В премии участвовали компании из Барнаула, Алейска, Бийска, Заринска, Белокурихи, Рубцовска и еще 25
+            населенных пункта Алтайского края</p>
+        </li>
+        <li class="memories__stat-item">
+          <span class="memories__stat-number">74 230</span>
+          <p class="memories__stat-text">голосов поступило на этапе выбора победителей. Больше всего голосов поступило в
+            номинациях "Торговая сеть года", "Турфирма года", "Фастфуд года", "Автосалон года"</p>
+        </li>
+        <li class="memories__stat-item">
+          <span class="memories__stat-number">111 759</span>
+          <p class="memories__stat-text">человек зашло на сайт Премии за период проекта. Открытое голосование за любимые
+            компании привлекло внимание жителей края</p>
+        </li>
+      </ul>
+      <img src="/static/images/nzk-22.png" alt="nzk22" class="memories__img" width="1216" height="650">
+    </section>
+    <section class="winners container">
+      <h2 class="winners__title">Победители НЗК 2022 года</h2>
+      <div class="winners__list">
+        <ul class="winners__list-open">
+          <li class="winners__list-title">Открытые</li>
+          <li class="winners__list-item">Автосервис года — <span>Avtoformula</span></li>
+          <li class="winners__list-item">Застройщик года — <span>2 Этажа</span></li>
+          <li class="winners__list-item">Курорт / санаторий года — <span>Сосновый бор</span></li>
+          <li class="winners__list-item">Медицинская клиника года — <span>Здоровое Поколение</span></li>
+          <li class="winners__list-item">Образовательный центр года — <span>AaPPLE</span></li>
+          <li class="winners__list-item">Производитель продуктов питания года — <span>Алтайские Закрома</span></li>
+          <li class="winners__list-item">Производитель промышленных товаров года — <span>Металл Профиль</span></li>
+          <li class="winners__list-item">Промышленное предприятие года — <span>Барнаульский завод механических
+              прессов</span></li>
+          <li class="winners__list-item">Ресторан года — <span>Damiani</span></li>
+          <li class="winners__list-item">Салон красоты года — <span>Центр европейской косметологии</span></li>
+          <li class="winners__list-item">Спортивный клуб года — <span>Магис Спорт</span></li>
+          <li class="winners__list-item">Стоматология года — <span>Кариб-плюс</span></li>
+          <li class="winners__list-item">Стройка и ремонт года — <span>Знак</span></li>
+          <li class="winners__list-item">Телекоммуникационная компания года — <span>ЭР-Телеком Холдинг/Дом Ру и Дом Ру
+              Бизнес</span></li>
+          <li class="winners__list-item">Торговая сеть года — <span>Светофор</span></li>
+          <li class="winners__list-item">Торгово-развлекательный центр года — <span>Galaxy</span></li>
+          <li class="winners__list-item">Турфирма года — <span>YETI</span></li>
+          <li class="winners__list-item">Университет года — <span>Алтайский государственный медицинский
+              университет</span></li>
+        </ul>
+        <ul class="winners__list-special">
+          <li class="winners__list-title">Специальные</li>
+          <li class="winners__list-item">Рекламодатель года — <span>Евростиль</span></li>
+          <li class="winners__list-item">Newsmaker года — <span>Банк ВТБ</span></li>
+          <li class="winners__list-item">Мой бизнес года — <span>Сибирский хвост</span></li>
+          <li class="winners__list-item">Работодатель года — <span>Энтерра Софт</span></li>
+          <li class="winners__list-item">Народная любовь года — <span>Светофор</span></li>
+        </ul>
+      </div>
+    </section>
+    <section class="more container">
+      <ul class="more__list">
+        @@include('blogCard/index.html', {
+        "class": "more__item",
+        "imgURL" : "/static/images/blog-4.png",
+        "title": "Вручении премии Народный знак качества. Прямая трансляция.",
+        "text": "",
+        "linkText": "Смотреть",
+        "link":
+        "https://www.amic.ru/news/narod_znak/kak-proshlo-nagrazhdenie-pobediteley-narodnogo-znaka-kachestva-fotoreportazh"
+        })
+        @@include('blogCard/index.html', {
+        "class": "more__item",
+        "imgURL" : "/static/images/blog-5.png",
+        "title": "Как прошло награждение победителей Народного знака качества. Фоторепортаж",
+        "text": "",
+        "linkText": "Смотреть",
+        "link":
+        "https://www.amic.ru/news/narod_znak/kak-proshlo-nagrazhdenie-pobediteley-narodnogo-znaka-kachestva-fotoreportazh"
+        })
+        @@include('blogCard/index.html', {
+        "class": "more__item",
+        "imgURL" : "/static/images/blog-6.png",
+        "title": "Зажигать новые звезды. Как прошла первая в истории Барнаула церемония премии Народный знак качества",
+        "text": "",
+        "linkText": "Смотреть",
+        "link":
+        "https://www.amic.ru/news/narod_znak/kak-proshlo-nagrazhdenie-pobediteley-narodnogo-znaka-kachestva-fotoreportazh"
+        })
+      </ul>
+    </section>
+  </main>
+  @@include('footer/index.html')
+  <script src="scripts.js"></script>
+</body>
+
+</html>

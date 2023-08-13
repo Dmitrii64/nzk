@@ -1,0 +1,41 @@
+.footer {
+  padding: 40px 0;
+  background-color: #212429;
+  color: #FFF;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65.8%;
+  }
+
+  &__advertising,
+  &__supervisor {
+    display: flex;
+    flex-direction: column;
+
+    &>a {
+      margin-top: 5px;
+      color: #FFF;
+      transition: color 0.4s;
+      
+      &:hover {
+        color: #FF7A00;
+      }
+    }
+  }
+
+  &__note {
+    margin-top: 70px;
+    @include font-size(14px, 20px);
+    max-width: 720px;
+    opacity: 0.8;
+  }
+}

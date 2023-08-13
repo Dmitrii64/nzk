@@ -1,0 +1,20 @@
+@import "../../components/mixins";
+
+.nominees {
+  margin-top: 60px;
+  margin-bottom: 140px;
+
+  &__chapter {
+    max-width: 800px;
+    margin-bottom: 90px;
+  }
+
+  &__title {
+    @include font-namu(19px, 52px);
+    color: #FF7A00;
+  }
+
+  &__item {
+    margin-top: 20px;
+  }
+}

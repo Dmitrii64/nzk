@@ -1,0 +1,32 @@
+{
+  "name": "gulp-elementary",
+  "version": "2.0.0",
+  "description": "Simple gulp application",
+  "main": "gulpfile.js",
+  "author": "ducker-dev <the.ivan.smirnov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.54.0",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "node ./node_modules/gulp/bin/gulp.js start",
+    "build": "node ./node_modules/gulp/bin/gulp.js build"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "gulp-babel": "^8.0.0"
+  }
+}

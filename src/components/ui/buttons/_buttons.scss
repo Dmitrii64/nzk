@@ -1,0 +1,28 @@
+.button {
+  display: inline-block;
+  min-width: max-content;
+  height: fit-content;
+  font-size: 16px;
+  line-height: calc(24/16);
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 25px;
+  background-color: #FFB800;
+  color: #FFF;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+
+  &:hover {
+    background-color: #FF7A00;
+  }
+
+  &_poster {
+    font-size: 18px;
+    padding: 15px 25px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid #FFF;
+  }
+}
