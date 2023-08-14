@@ -20,13 +20,13 @@
   &__text {
     margin-top: 15px;
     @include font-size(16px, 24px);
-    color: #181A1C;
+    color: #181a1c;
   }
 
   &__link {
     display: block;
     margin-top: 10px;
-    color: #FF7A00;
+    color: #ff7a00;
     transition: opacity 0.4s;
 
     &:hover {

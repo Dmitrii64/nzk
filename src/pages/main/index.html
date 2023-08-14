@@ -13,7 +13,7 @@
 
 <body>
   @@include('header/index.html')
-  <!-- <main>
+  <main>
     <section class="poster">
       <img src="/static/images/poster-logo.png" alt="logo" class="poster__logo">
       <div class="poster__wrapper container">
@@ -89,21 +89,21 @@
         </ul>
       </div>
     </section>
-    <section class="nomination container">
-      <div class="nomination__header">
+    <section class="nomination-block container">
+      <div class="nomination-block__header">
         <h2 class="section-title">номинации</h2>
-        <p class="nomination__text"><span>Всего в «Народном знаке качества» 19 номинации,</span> которые разделены на 2
+        <p class="nomination-block__text"><span>Всего в «Народном знаке качества» 19 номинации,</span> которые разделены на 2
           блока: открытые и специальные</p>
       </div>
-      <ul class="nomination__types">
-        <li class="nomination__type">
-          <a href="#" class="nomination__link">
-            <div class="nomination__img-wrapper">
-              <img class="nomination__img" src="/static/images/type-1.png" alt="open">
+      <ul class="nomination-block__types">
+        <li class="nomination-block__type">
+          <a href="#" class="nomination-block__link">
+            <div class="nomination-block__img-wrapper">
+              <img class="nomination-block__img" src="/static/images/type-1.png" alt="open">
             </div>
-            <div class="nomination__type-info">
-              <h3 class="nomination__type-title">Открытые</h3>
-              <p class="nomination__type-text">Это номинации, в которых каждый может принять участие в выборе народных
+            <div class="nomination-block__type-info">
+              <h3 class="nomination-block__type-title">Открытые</h3>
+              <p class="nomination-block__type-text">Это номинации, в которых каждый может принять участие в выборе народных
                 компаний.
                 <span>Одна номинация — одна компания.</span> Помните об этом, когда будете подавать номинантов или
                 отдавать за них свой
@@ -112,30 +112,70 @@
             </div>
           </a>
         </li>
-        <li class="nomination__type">
-          <a href="#" class="nomination__link">
-            <div class="nomination__img-wrapper">
-              <img class="nomination__img" src="/static/images/type-2.png" alt="special">
+        <li class="nomination-block__type">
+          <a href="#" class="nomination-block__link">
+            <div class="nomination-block__img-wrapper">
+              <img class="nomination-block__img" src="/static/images/type-2.png" alt="special">
             </div>
-            <div class="nomination__type-info">
-              <h3 class="nomination__type-title">Специальные</h3>
-              <p class="nomination__type-text">Это закрытые номинации, право выбора победителей в которых за собой
+            <div class="nomination-block__type-info">
+              <h3 class="nomination-block__type-title">Специальные</h3>
+              <p class="nomination-block__type-text">Это закрытые номинации, право выбора победителей в которых за собой
                 оставляют редакция <span>ИА "Амител" и Business FM Барнаул.</span></p>
             </div>
           </a>
         </li>
       </ul>
-      <div class="nomination__footer">
-        <p class="nomination__footer-title">Помоги любимым<br>
+      <div class="nomination-block__footer">
+        <p class="nomination-block__footer-title">Помоги любимым<br>
           компаниям выиграть.<br>
           Номинируй за них <span>прямо сейчас!</span></p>
-        <a class="button nomination__footer-button" href="#">Заявить компании</a>
+        <a class="button nomination-block__footer-button" href="#">Заявить компании</a>
       </div>
     </section>
     <section class="blog container">
-      <div class="blog__aside">
-        <h2 class="section-title blog__title">Самые последние новости премии на Amic.ru</h2>
-        <a class="blog__link" href="/blog">Все новости</a>
+      <div class="blog__wrapper">
+        <div class="blog__aside">
+          <h2 class="section-title blog__title">Самые последние новости премии на Amic.ru</h2>
+          <a class="blog__link" href="/blog">Все новости</a>
+        </div>
+        <ul class="blog__list">
+          @@include('blogCard/index.html', {
+          "class": "blog__item",
+          "imgURL" : "/static/images/blog-1.png",
+          "title": "Вручении премии Народный знак качества. Прямая трансляция.",
+          "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+          "linkText": "Читать на amic.ru",
+          "link":
+          "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+          })
+          @@include('blogCard/index.html', {
+          "class": "blog__item",
+          "imgURL" : "/static/images/blog-2.png",
+          "title": "Премия читателей Аmic: В прямом смысле – народные!",
+          "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+          "linkText": "Читать на amic.ru",
+          "link":
+          "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+          })
+          @@include('blogCard/index.html', {
+          "class": "blog__item",
+          "imgURL" : "/static/images/blog-3.png",
+          "title": "Премия читателей Аmic: В прямом смысле – народные!",
+          "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+          "linkText": "Читать на amic.ru",
+          "link":
+          "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+          })
+          @@include('blogCard/index.html', {
+          "class": "blog__item",
+          "imgURL" : "/static/images/blog-3.png",
+          "title": "Премия читателей Аmic: В прямом смысле – народные!",
+          "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
+          "linkText": "Читать на amic.ru",
+          "link":
+          "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
+          })
+        </ul>
         <form class="blog__form">
           <p class="blog__form-title">Подпишись на новости</p>
           <p class="blog__form-subtitle">Народного знака качества <span>2023</span></p>
@@ -145,44 +185,6 @@
               конфиденциальности</a></p>
         </form>
       </div>
-      <ul class="blog__list">
-        @@include('blogCard/index.html', {
-        "class": "blog__item",
-        "imgURL" : "/static/images/blog-1.png",
-        "title": "Вручении премии Народный знак качества. Прямая трансляция.",
-        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
-        "linkText": "Читать на amic.ru",
-        "link":
-        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
-        })
-        @@include('blogCard/index.html', {
-        "class": "blog__item",
-        "imgURL" : "/static/images/blog-2.png",
-        "title": "Премия читателей Аmic: В прямом смысле – народные!",
-        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
-        "linkText": "Читать на amic.ru",
-        "link":
-        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
-        })
-        @@include('blogCard/index.html', {
-        "class": "blog__item",
-        "imgURL" : "/static/images/blog-3.png",
-        "title": "Премия читателей Аmic: В прямом смысле – народные!",
-        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
-        "linkText": "Читать на amic.ru",
-        "link":
-        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
-        })
-        @@include('blogCard/index.html', {
-        "class": "blog__item",
-        "imgURL" : "/static/images/blog-3.png",
-        "title": "Премия читателей Аmic: В прямом смысле – народные!",
-        "text": "Аmic продолжает вручать награды победителям премии Народный знак качества – 2017",
-        "linkText": "Читать на amic.ru",
-        "link":
-        "https://www.amic.ru/news/narod_znak/bolshaya-otvetstvennost-za-chto-altayskim-kompaniyam-dali-narodnyy-znak-kachestva"
-        })
-      </ul>
     </section>
     <section class="videos container">
       <div class="videos__aside">
@@ -224,7 +226,7 @@
       </ul>
     </section>
   </main>
-  @@include('footer/index.html') -->
+  @@include('footer/index.html') 
   <script src="scripts.js"></script>
 </body>
 
