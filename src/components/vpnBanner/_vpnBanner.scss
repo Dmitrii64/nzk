@@ -1,5 +1,14 @@
 .vpn {
   margin-top: 15px;
+  transition: max-height 0.4s;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+
+  &_close {
+    display: none;
+  }
 
   &__wrapper {
     position: relative;
@@ -9,13 +18,21 @@
     background-color: #FFBEBE;
     display: flex;
     align-items: center;
+
+    @media (max-width: 1300px) {
+      padding: 30px 60px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 30px 15px;
+    }
   }
 
   &__check {
     padding: 3px 3px 3px 14px;
     border-radius: 52px;
     background: linear-gradient(250deg, #F43232 0%, #AD2EA0 100%);
-    @include font-size(13px , 32px);
+    @include font-size(13px, 32px);
     color: #fff;
     display: flex;
     align-items: center;
@@ -27,19 +44,43 @@
       background-color: #fff;
       border-radius: 100%;
     }
+
+    &>span {
+      min-width: max-content;
+    }
   }
 
   &__text {
     margin-left: 35px;
+
+    @media (max-width: 768px) {
+      margin-left: 10px;
+    }
   }
 
   &__title {
     @include font-size(22px, 26px);
     font-weight: 600;
+
+    @media (max-width: 1024px) {
+      @include font-size(18px, 22px);
+    }
+
+    @media (max-width: 768px) {
+      @include font-size(12px, 16px);
+    }
   }
 
   &__description {
     @include font-size(19px, 26px);
+
+    @media (max-width: 1024px) {
+      @include font-size(18px, 22px);
+    }
+
+    @media (max-width: 768px) {
+      @include font-size(12px, 16px);
+    }
 
     &>span {
       font-weight: 600;
@@ -56,5 +97,12 @@
     background-color: transparent;
     background-image: url('/static/images/close.svg');
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+      background-size: contain;
+      right: 15px;
+    }
   }
 }

@@ -5,11 +5,13 @@
   &__header {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   &__img-wrapper {
     position: relative;
     width: 121px;
+    min-width: 121px;
     height: 100px;
 
     &::after {
@@ -34,6 +36,10 @@
     margin-left: 23px;
     @include font-namu(22px, 17px);
     flex: auto;
+
+    @media (max-width: 768px) {
+      @include font-namu(19px, 28px);
+    }
   }
 
   &__close {
@@ -43,6 +49,13 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      margin-left: 10px;
+    }
 
     &::after,
     &::before {
@@ -77,17 +90,27 @@
     @include font-size(14px, 24px);
     font-weight: 500;
     color: #181A1C;
+    cursor: pointer;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 
   &_open {
-    & > .nominee__list {
+    &>.nominee__list {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       margin-left: 160px;
+
+      @media (max-width: 768px) {
+        margin-left: 140px;
+      }
     }
 
     .nominee__close {
+
       &::before,
       &::after {
         background-color: #FF7A00;

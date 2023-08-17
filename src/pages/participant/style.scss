@@ -2,8 +2,15 @@
 
 .faq {
   margin: 64px auto 240px;
-  max-width: 1040px;
-  padding: 0 20px;
+  max-width: 1160px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 150px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 50px auto 100px;
+  }
 
   &__item {
     margin-top: 50px;
@@ -15,10 +22,19 @@
 
   &__question {
     @include font-namu(20px, 52px);
+
+    @media (max-width: 768px) {
+      @include font-namu(14px, 20px);
+    }
   }
 
   &__answer {
     margin-top: 7px;
     @include font-size(18px, 32px);
+
+    @media (max-width: 768px) {
+      margin-top: 9px;
+      @include font-size(14px, 20px);
+    }
   }
 }

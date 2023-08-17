@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="/static/fonts/fonts.css" />
   <link href="/common.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../static/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../static/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../static/images/favicon-16x16.png">
   <title>Номинации</title>
 </head>
 
@@ -128,8 +131,35 @@
         </ul>
       </div>
     </section>
+    <div class="popup" id="nomination">
+      <div class="popup__wrapper">
+        <button class="popup__close" type="button"></button>
+        <div class="popup__content popup__content_horizontal">
+          <p class="popup__nomination-title">Заявить компанию в номинации: </p>
+          <p class="popup__nomination"></p>
+          <div class="popup__nomination-description">
+            <div class="popup__img-wrapper">
+              <img src="" alt="nomination">
+            </div>
+            <p class="popup__nomination-text">В данной номинации могут быть поданы автосалоны, которые являются официальными дилерами автомобильных марок, например, Toyota, Exceed, Geely, Chery и другие.</p>
+          </div>
+          <form class="popup__nomination-form">
+            <div class="popup__nomination-input-wrapper">
+              <label for="city">Город</label>
+              <input type="text" id="city">
+            </div>
+            <div class="popup__nomination-input-wrapper">
+              <label for="company">Коммерческое название компании</label>
+              <input type="text" id="company">
+            </div>
+            <button class="button popup__nomination-button">Заявить компанию</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
   @@include('footer/index.html')
+  <script src="scripts.js"></script>
 </body>
 
 </html>

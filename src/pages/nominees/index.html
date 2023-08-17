@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="/static/fonts/fonts.css" />
   <link href="/common.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../static/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../static/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../static/images/favicon-16x16.png">
   <title>Номинанты</title>
 </head>
 
@@ -25,7 +28,7 @@
         <p class="nominees__title">Общие номинации:</p>
         <ul class="nominees__list">
           @@include('nominee/index.html', {
-          "class": "nominees__item nominee_open",
+          "class": "nominees__item",
           "title": "Автодилер года",
           "imgURL": "/static/images/nominations/car-dealer.png",
           })
@@ -127,8 +130,16 @@
         </ul>
       </div>
     </section>
+    <div class="popup" id="nomination">
+      <div class="popup__wrapper popup__wrapper_horizontal">
+        <button class="popup__close" type="button"></button>
+        <div class="popup__content popup__content_horizontal"> 
+        </div>
+      </div>
+    </div>
   </main>
   @@include('footer/index.html')
+  <script src="scripts.js"></script>
 </body>
 
 </html>

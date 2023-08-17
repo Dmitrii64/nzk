@@ -15,6 +15,7 @@
   &__title {
     margin-top: 20px;
     @include font-namu(20px, 28px);
+    font-weight: 400;
   }
 
   &__text {

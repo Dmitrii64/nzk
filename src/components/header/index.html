@@ -5,12 +5,12 @@
     </a>
     <ul class="header__partners">
       <li class="header__partner">
-        <a href="https://www.amic.ru/" class="header__logo header__logo_amic">
+        <a href="https://www.amic.ru/" target="_blank" class="header__logo header__logo_amic">
           <img src="/static/images/amic.png" alt="amic" width="62" height="19">
         </a>
       </li>
       <li class="header__partner">
-        <a href="https://vk.com/businessfm_barnaul" class="header__logo header__logo_fm">
+        <a href="https://vk.com/businessfm_barnaul" target="_blank" class="header__logo header__logo_fm">
           <img src="/static/images/business-fm.png" alt="business-fm" width="115" height="24">
         </a>
       </li>
@@ -36,8 +36,15 @@
       </li>
     </ul>
     <div class="header__buttons">
-      <a href="#" class="header__button button">Принять участие</a>
+      <button class="header__button button">Принять участие</button>
       <button class="header__log button">Вход</button>
     </div>
   </nav>
 </header>
+
+<div class="popup" id="registration">
+  <div class="popup__wrapper">
+    <button class="popup__close" type="button"></button>
+    <div class="popup__content"></div>
+  </div>
+</div>

@@ -4,19 +4,49 @@
   margin-top: 50px;
   margin-bottom: 250px;
 
+  @media (max-width: 768px) {
+    margin-bottom: 100px;
+  }
+
   &__title {
     margin: 0;
     @include font-namu(28px, 24px);
     font-weight: 400;
+
+    @media (max-width: 1024px) {
+      @include font-namu(24px, 24px);
+    }
+
+    @media (max-width: 768px) {
+      @include font-namu(20px, 24px);
+    }
   }
 
   &__chapter {
     max-width: 760px;
     padding-top: 50px;
 
+    @media (max-width: 768px) {
+      padding-top: 40px;
+    }
+
     &-title {
       @include font-namu(20px, 24px);
       font-weight: 400;
+
+      @media (max-width: 1024px) {
+        @include font-namu(18px, 24px);
+      }
+
+      @media (max-width: 768px) {
+        @include font-namu(16px, 24px);
+      }
+    }
+
+    &>ol {
+      @media (max-width: 768px) {
+        padding-left: 15px;
+      }
     }
   }
 
@@ -24,6 +54,14 @@
     margin-top: 10px;
     @include font-size(18px, 24px);
     color: #141516;
+
+    @media (max-width: 1024px) {
+      @include font-size(16px, 24px);
+    }
+
+    @media (max-width: 768px) {
+      @include font-size(14px, 24px);
+    }
 
     &:first-of-type {
       margin-top: 18px;
@@ -36,6 +74,10 @@
     @include font-size(18px, 24px);
     color: #141516;
     text-decoration: underline;
+
+    @media (max-width: 768px) {
+      @include font-size(16px, 24px);
+    }
 
     &:hover {
       opacity: 0.7;

@@ -1,0 +1,570 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+
+  &_open {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin: 30px auto;
+
+    &_horizontal {
+      max-width: 1070px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      margin: 20px auto;
+    }
+  }
+
+  &__content {
+    max-width: 700px;
+    max-height: calc(100vh - 60px);
+    border-radius: 40px;
+    border: 1px solid #B6B8BF;
+    background: #FFF;
+    padding: 90px 40px;
+    overflow-y: auto;
+
+    @media (max-width: 768px) {
+      max-height: calc(100vh - 40px);
+      padding: 30px 20px;
+    }
+
+    &_horizontal {
+      max-width: 1070px;
+      padding: 90px;
+
+      @media (max-width: 1024px) {
+        padding: 40px;
+      }
+
+      @media (max-width: 768px) {
+        padding: 30px 20px;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 30px;
+    right: 30px;
+    border: none;
+    background-color: transparent;
+    background-image: url('/static/images/close.svg');
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  &__title {
+    @include font-namu(48px, 58px);
+
+    @media (max-width: 768px) {
+      @include font-namu(33px, 58px);
+    }
+  }
+
+  &__form {
+    margin-top: 34px;
+
+    @media (max-width: 768px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    @include font-namu(18px, 52px);
+    font-weight: 400;
+  }
+
+  &__line {
+    display: block;
+    margin-top: 50px;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+
+    @media (max-width: 768px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__socials {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    @include font-namu(30px, 58px);
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      @include font-namu(24px, 58px);
+      margin-top: 15px;
+    }
+
+    &-icon {
+      display: block;
+      margin-left: 26px;
+      width: 48px;
+      height: 48px;
+
+      &_ok {
+        background-image: url('/static/images/ok-color.svg');
+      }
+
+      &_vk {
+        background-image: url('/static/images/vk-color.svg');
+      }
+    }
+  }
+
+  &__checkbox-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration-line: underline;
+    }
+  }
+
+  &__form-description {
+    margin-top: 15px;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 25px 20px;
+    @include font-size(16px, 24px);
+    color: #181A1C;
+    border-radius: 8px;
+    border: 1px solid #D0D8E4;
+    background: #F9FAFC;
+    outline: none;
+  }
+
+  input[type="checkbox"]:checked,
+  input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  input[type="checkbox"]:checked+label,
+  input[type="checkbox"]:not(:checked)+label {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    padding-left: 46px;
+    @include font-size(16px, 24px);
+    background: none;
+    border: none;
+    color: #181A1C;
+    cursor: pointer;
+  }
+
+  [type="checkbox"]:checked+label:before,
+  [type="checkbox"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    border: 1px solid #B9BBBE;
+  }
+
+  [type="checkbox"]:checked+label:after,
+  [type="checkbox"]:not(:checked)+label:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    border: 1px solid #B9BBBE;
+    background: #668FF9;
+    background-image: url('/static/images/checkbox.svg');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  [type="checkbox"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  [type="checkbox"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  input[type="radio"]:checked,
+  input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  input[type="radio"]:checked+label,
+  input[type="radio"]:not(:checked)+label {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    padding-left: 55px;
+    @include font-size(20px, 24px);
+    background: none;
+    border: none;
+    color: #181A1C;
+    cursor: pointer;
+  }
+
+  [type="radio"]:checked+label:before,
+  [type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #7D7F85;
+    background-color: #F3EFEF;
+  }
+
+  [type="radio"]:checked+label:after,
+  [type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #7D7F85;
+    background: #FF7A00;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  [type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  [type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  &__nomination-title {
+    @include font-namu(26px, 41px);
+
+    @media (max-width: 768px) {
+      @include font-namu(14px, 41px);
+    }
+  }
+
+  &__nomination {
+    margin-top: 15px;
+    margin-bottom: 65px;
+    @include font-namu(42px, 34px);
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 30px;
+      @include font-namu(28px, 28px);
+    }
+  }
+
+  &__nomination-description {
+    border-top: 1px solid #D6D6D6;
+    border-bottom: 1px solid #D6D6D6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      padding: 10px 0;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    width: 260px;
+    min-width: 260px;
+    height: 190px;
+
+    @media (max-width: 768px) {
+      width: 130px;
+      min-width: 130px;
+      height: 95px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 48px;
+      right: 62px;
+      width: 60px;
+      height: 63px;
+      background-image: url('/static/images/check.svg');
+      background-position: bottom;
+      background-repeat: no-repeat;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    &>img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      @media (max-width: 768px) {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__nomination-text {
+    margin-left: 50px;
+    @include font-size(16px, 29px);
+    color: #181A1C;
+
+    @media (max-width: 768px) {
+      @include font-size(12px, 20px);
+      margin-left: 20px;
+    }
+  }
+
+  &__nomination-form {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media (max-width: 768px) {
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__nomination-input-wrapper {
+    width: 30.7%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    label {
+      @include font-size(14px, 24px);
+      font-weight: 500;
+      color: #181A1C;
+    }
+
+    input {
+      margin-top: 10px;
+      margin-bottom: 0;
+      padding: 16px 20px;
+
+      @media (max-width: 768px) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__nomination-button {
+    width: 30.7%;
+    @include font-namu(18px, 52px);
+    font-weight: 400;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__thank-title {
+    margin-bottom: 60px;
+    @include font-namu(48px, 58px);
+    text-align: center;
+
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__thank-description {
+    @include font-namu(26px, 41px);
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 750px;
+
+    @media (max-width: 768px) {
+      @include font-namu(22px, 34px);
+    }
+  }
+
+  &__thank-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    @include font-namu(18px, 52px);
+    font-weight: 400;
+    padding: 10px 50px;
+
+    @media (max-width: 768px) {
+      min-width: fit-content;
+      @include font-namu(18px, 18px);
+    }
+
+    &_close {
+      border: 1px solid #978A8A;
+      background-color: transparent;
+      width: 300px;
+    }
+  }
+
+  &__nominees {
+    @include font-namu(42px, 34px);
+
+    @media (max-width: 768px) {
+      @include font-namu(28px, 28px);
+      margin-top: 20px;
+    }
+
+    &-title {
+      @include font-namu(26px, 41px);
+      margin-top: 20px;
+
+      @media (max-width: 768px) {
+        @include font-namu(14px, 41px);
+        margin-top: 10px;
+      }
+    }
+
+    &-form {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      @media (max-width: 768px) {
+        margin-top: 30px;
+      }
+    }
+
+    &-input-wrapper {
+      width: 50%;
+      margin-bottom: 30px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-button {
+      @include font-namu(18px, 52px);
+      font-weight: 400;
+      padding: 0;
+      width: 280px;
+      margin-top: 40px;
+
+      &:disabled {
+        background: #D9D5CB;
+        color: #9C9797;
+        pointer-events: none;
+      }
+    }
+
+    &-rating {
+      margin-top: 60px;
+
+      @media (max-width: 768px) {
+        margin-top: 30px;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        @include font-size(16px, 24px);
+        font-weight: 500;
+        color: #181A1C;
+
+        @media (max-width: 768px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      &-title {
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+      }
+
+      &-value {
+        margin-left: 20px;
+        min-width: 35px;
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+          margin-left: 0;
+        }
+      }
+
+      &-line {
+        margin-left: 30px;
+        flex: auto;
+      }
+    }
+  }
+}

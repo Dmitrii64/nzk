@@ -66,3 +66,71 @@ function addPopUpContent(content) {
     popUpContent.innerHTML = ""
   })
 }
+
+//accordion
+const nominations = document.querySelectorAll(".nominees__list");
+nominations.forEach(list => {
+  list.addEventListener("click", (event) => {
+    let item = event.target.closest('.nominee__header');
+    if (!item) return;
+    item.closest('.nominee').classList.toggle("nominee_open");
+
+    let activeCategory = item.closest('.nominee');
+    let activeCategoryTitle = activeCategory.querySelector('.nominee__title').innerHTML;
+    let activeCompanies = [];
+    activeCategory.querySelectorAll('.nominee__item').forEach(item => activeCompanies.push(item.innerHTML))
+
+    activeCategory.querySelector('.nominee__list').addEventListener('click', (event) => {
+      let item = event.target.closest('.nominee__item');
+      if (!item) return;
+
+      const nominationPopUp = document.querySelector("#nomination");
+      const nominationPopUpContent = nominationPopUp.querySelector(".popup__content");
+      const content = `
+      <p class="popup__nominees">${activeCategoryTitle}</p>
+      <p class="popup__nominees-title">Проголосовать за компанию </p>
+      <form class="popup__nominees-form">
+      <button disabled class="button popup__nominees-button">Проголосовать</button>
+      </form>`
+
+      nominationPopUp.classList.add('popup_open');
+      nominationPopUpContent.innerHTML = content;
+      let popUpForm = nominationPopUpContent.querySelector('.popup__nominees-form');
+      activeCompanies.forEach((item, i) => popUpForm.insertAdjacentHTML("afterbegin",
+        `<div class="popup__nominees-input-wrapper">
+          <input type="radio" id="company${i}" name="company">
+          <label for="company${i}">${item}</label>
+        </div>`))
+      body.classList.add("no-scroll");
+
+      let popUpButton= popUpForm.querySelector('.popup__nominees-button');
+      popUpForm.addEventListener('click', (event) => {
+        if (event.target && event.target.matches("input[type='radio']")) {
+          popUpButton.removeAttribute('disabled')
+        }
+      });
+
+      popUpButton.addEventListener('click', ()=>{
+        nominationPopUpContent.innerHTML = `
+        <p class="popup__nominees">${activeCategoryTitle}</p>
+        <ul class="popup__nominees-rating"></ul>`
+        let popRating = nominationPopUpContent.querySelector('.popup__nominees-rating');
+        activeCompanies.forEach((item, i) => popRating.insertAdjacentHTML("beforeend",
+        `<li class="popup__nominees-rating-item">
+          <p class="popup__nominees-rating-title">${item}</p>
+          <span class="popup__nominees-rating-value">${50-5*i}%</span>
+          <div class="popup__nominees-rating-line">
+            <span style="display:block; width: ${50-5*i}%; height: 14px; border-radius: 6px; background: #FF7A00; opacity: ${1-(0.1*i)}"></span>
+          </div>
+        </li>`))
+      })
+
+      const closePopUp = nominationPopUp.querySelector(".popup__close");
+      closePopUp.addEventListener('click', () => {
+        nominationPopUp.classList.remove('popup_open');
+        body.classList.remove("no-scroll");
+        nominationPopUpContent.innerHTML = '';
+      })
+    })
+  })
+})

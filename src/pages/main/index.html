@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="/static/fonts/fonts.css" />
   <link href="/common.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
   <title>Главная</title>
 </head>
 
@@ -20,7 +23,7 @@
         <div class="poster__main">
           <h1 class="poster__title">Народный знак качества 2023</h1>
           <p class="poster__description">Время выбирать лучшие компании Алтайского края</p>
-          <a href="#" class="button button_poster poster__button">Заявить компании</a>
+          <a href="/pages/nominations" class="button button_poster poster__button">Заявить компании</a>
           @@include('ui/socials/index.html', {
           "text" : "Расскажи о премии:",
           "classes": "poster__socials"
@@ -63,13 +66,13 @@
         <ul class="about__main-partners">
           <li class="about__main-partner">
             <p class="about__partner-title">Генеральный партнёр</p>
-            <a class="about__img-wrapper" href="https://barnaul-gi.ru/">
+            <a class="about__img-wrapper" target="_blank" href="https://barnaul-gi.ru/">
               <img class="about__partner-img" src="/static/images/partner-1.png" alt="partner">
             </a>
           </li>
           <li class="about__main-partner">
             <p class="about__partner-title">Стратегический партнер</p>
-            <a class="about__img-wrapper" href="https://alfabank.ru/">
+            <a class="about__img-wrapper" target="_blank" href="https://alfabank.ru/">
               <img class="about__partner-img" src="/static/images/partner-2.png" alt="partner">
             </a>
           </li>
@@ -77,12 +80,12 @@
         <p class="about__partner-title about__partner-title_grey">Партнёры</p>
         <ul class="about__partners-list">
           <li class="about__partner">
-            <a class="about__img-wrapper" href="https://rt.ru/">
+            <a class="about__img-wrapper" target="_blank" href="https://rt.ru/">
               <img class="about__partner-img" src="/static/images/partner-3.png" alt="partner">
             </a>
           </li>
           <li class="about__partner">
-            <a class="about__img-wrapper" href="https://altnr.ru/">
+            <a class="about__img-wrapper" target="_blank" href="https://altnr.ru/">
               <img class="about__partner-img" src="/static/images/partner-4.png" alt="partner">
             </a>
           </li>
@@ -97,7 +100,7 @@
       </div>
       <ul class="nomination-block__types">
         <li class="nomination-block__type">
-          <a href="#" class="nomination-block__link">
+          <a href="/pages/nominees" class="nomination-block__link">
             <div class="nomination-block__img-wrapper">
               <img class="nomination-block__img" src="/static/images/type-1.png" alt="open">
             </div>
@@ -113,7 +116,7 @@
           </a>
         </li>
         <li class="nomination-block__type">
-          <a href="#" class="nomination-block__link">
+          <a href="/pages/nominees" class="nomination-block__link">
             <div class="nomination-block__img-wrapper">
               <img class="nomination-block__img" src="/static/images/type-2.png" alt="special">
             </div>
@@ -129,14 +132,14 @@
         <p class="nomination-block__footer-title">Помоги любимым<br>
           компаниям выиграть.<br>
           Номинируй за них <span>прямо сейчас!</span></p>
-        <a class="button nomination-block__footer-button" href="#">Заявить компании</a>
+        <a class="button nomination-block__footer-button" href="/pages/nominations">Заявить компании</a>
       </div>
     </section>
     <section class="blog container">
       <div class="blog__wrapper">
         <div class="blog__aside">
           <h2 class="section-title blog__title">Самые последние новости премии на Amic.ru</h2>
-          <a class="blog__link" href="/blog">Все новости</a>
+          <a class="blog__link" href="/pages/blog">Все новости</a>
         </div>
         <ul class="blog__list">
           @@include('blogCard/index.html', {

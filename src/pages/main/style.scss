@@ -522,6 +522,12 @@
     width: 295px;
     height: 70px;
     margin-right: 15px;
+
+    @media (max-width: 768px) {
+      &:last-child {
+        margin-top: 20px;
+      }
+    }
   }
 }
 
