@@ -38,7 +38,7 @@
     border-radius: 40px;
     border: 1px solid #B6B8BF;
     background: #FFF;
-    padding: 90px 40px;
+    padding: 70px 40px;
     overflow-y: auto;
 
     @media (max-width: 768px) {
@@ -165,6 +165,28 @@
 
   &__form-description {
     margin-top: 15px;
+  }
+
+  &__form-password {
+    position: relative;
+
+    &-icon {
+      position: absolute;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      top: 27px;
+      right: 25px;
+      width: 25px;
+      height: 25px;
+      background-image: url('/static/images/view.svg');
+      background-size: contain;
+      cursor: pointer;
+
+      &_visible {
+        background-image: url('/static/images/no-view.svg');
+      }
+    }
   }
 
   input {

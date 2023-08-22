@@ -18,7 +18,10 @@ const logInContent = `
 <span class="popup__title">Вход</span>
 <form class="popup__form">
   <input type="email" placeholder="Электронная почта">
-  <input type="password" placeholder="Пароль">
+  <div class="popup__form-password">
+    <input type="password" placeholder="Пароль">
+    <button class="popup__form-password-icon" type="button"><button>
+  </div>
   <button class="button popup__button">ВОЙТИ</button>
   <span class="popup__line"></span>
   <ul class="popup__socials">
@@ -30,7 +33,10 @@ const signInContent = `
 <span class="popup__title">Регистрация</span>
 <form class="popup__form">
   <input type="email" placeholder="Электронная почта">
-  <input type="password" placeholder="Пароль">
+  <div class="popup__form-password">
+    <input type="password" placeholder="Пароль">
+    <button class="popup__form-password-icon" type="button"><button>
+  </div>
   <div class="popup__checkbox-wrapper">
     <input type="checkbox" id="agreement" checked>
     <label class="popup__checkbox-text" for="agreement">Я принимаю условия <a href="#">Пользовательского
@@ -51,8 +57,29 @@ const signInContent = `
   </ul>
 </form>`
 
-logInButton.addEventListener('click', () => { addPopUpContent(logInContent) });
-signInButton.addEventListener('click', () => { addPopUpContent(signInContent) });
+logInButton.addEventListener('click', () => {
+  addPopUpContent(logInContent);
+  openClosePassword()
+});
+signInButton.addEventListener('click', () => {
+  addPopUpContent(signInContent);
+  openClosePassword()
+});
+
+function openClosePassword() {
+  let passwordInput = document.querySelector('.popup__form-password').querySelector('input');
+  let passwordButton = document.querySelector('.popup__form-password-icon');
+
+  passwordButton.addEventListener('click', () => {
+    if (passwordInput.getAttribute('type') == 'password') {
+      passwordButton.classList.add('popup__form-password-icon_visible');
+      passwordInput.setAttribute('type', 'text');
+    } else {
+      passwordButton.classList.remove('popup__form-password-icon_visible');
+      passwordInput.setAttribute('type', 'password');
+    }
+  })
+}
 
 function addPopUpContent(content) {
   popUp.classList.add('popup_open');
